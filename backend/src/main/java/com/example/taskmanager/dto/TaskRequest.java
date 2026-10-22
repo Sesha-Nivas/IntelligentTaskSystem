@@ -1,0 +1,1 @@
+package com.example.taskmanager.dto; import java.time.LocalDateTime; public record TaskRequest(String title,String description,LocalDateTime deadline,int importance,double estimatedHours,String status) {}

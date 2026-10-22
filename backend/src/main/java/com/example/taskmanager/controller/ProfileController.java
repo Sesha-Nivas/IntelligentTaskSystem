@@ -1,0 +1,2 @@
+package com.example.taskmanager.controller; import com.example.taskmanager.repository.UserRepository; import org.springframework.web.bind.annotation.*; import java.util.Map;
+@RestController @RequestMapping("/api/profile") @CrossOrigin(origins="http://localhost:5173") public class ProfileController {final UserRepository r; public ProfileController(UserRepository r){this.r=r;} @GetMapping public Map<String,String> get(@RequestHeader("X-User-Email") String e){var u=r.findByEmail(e).orElseThrow();return Map.of("name",u.getName(),"email",u.getEmail());}}
